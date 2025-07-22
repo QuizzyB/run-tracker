@@ -105,7 +105,7 @@ const authenticateToken = (req, res, next) => {
 // ROUTES
 
 // Авторизация
-app.post('/api/auth/login', async (req, res) => {
+app.post('/auth/login', async (req, res) => {
     try {
         const { email, password } = req.body;
 
@@ -148,7 +148,7 @@ app.post('/api/auth/login', async (req, res) => {
 });
 
 // Получить все пробежки пользователя
-app.get('/api/runs', authenticateToken, (req, res) => {
+app.get('/runs', authenticateToken, (req, res) => {
     try {
         const userRuns = runs
             .filter(run => run.userId === req.user.userId)
@@ -165,7 +165,7 @@ app.get('/api/runs', authenticateToken, (req, res) => {
 });
 
 // Добавить новую пробежку
-app.post('/api/runs', authenticateToken, upload.single('photo'), (req, res) => {
+app.post('/runs', authenticateToken, upload.single('photo'), (req, res) => {
     try {
         const { distance, time, location } = req.body;
 
@@ -212,7 +212,7 @@ app.post('/api/runs', authenticateToken, upload.single('photo'), (req, res) => {
 });
 
 // Получить статистику пользователя
-app.get('/api/stats', authenticateToken, (req, res) => {
+app.get('/stats', authenticateToken, (req, res) => {
     try {
         const userRuns = runs.filter(run => run.userId === req.user.userId);
 
@@ -246,7 +246,7 @@ app.get('/api/stats', authenticateToken, (req, res) => {
 });
 
 // Получить конкретную пробежку
-app.get('/api/runs/:id', authenticateToken, (req, res) => {
+app.get('/runs/:id', authenticateToken, (req, res) => {
     try {
         const runId = parseInt(req.params.id);
         const run = runs.find(r => r.id === runId && r.userId === req.user.userId);
@@ -267,7 +267,7 @@ app.get('/api/runs/:id', authenticateToken, (req, res) => {
 });
 
 // Удалить пробежку
-app.delete('/api/runs/:id', authenticateToken, (req, res) => {
+app.delete('/runs/:id', authenticateToken, (req, res) => {
     try {
         const runId = parseInt(req.params.id);
         const runIndex = runs.findIndex(r => r.id === runId && r.userId === req.user.userId);
@@ -322,12 +322,12 @@ app.listen(PORT, () => {
     console.log(`Сервер запущен на порту ${PORT}`);
     console.log(`API доступно по адресу: http://localhost:${PORT}/api`);
     console.log('\nДоступные эндпоинты:');
-    console.log('POST /api/auth/login - Авторизация');
-    console.log('GET  /api/runs - Получить все пробежки');
-    console.log('POST /api/runs - Добавить пробежку');
-    console.log('GET  /api/stats - Получить статистику');
-    console.log('GET  /api/runs/:id - Получить пробежку по ID');
-    console.log('DELETE /api/runs/:id - Удалить пробежку');
+    console.log('POST /auth/login - Авторизация');
+    console.log('GET  /runs - Получить все пробежки');
+    console.log('POST /runs - Добавить пробежку');
+    console.log('GET  /stats - Получить статистику');
+    console.log('GET  /runs/:id - Получить пробежку по ID');
+    console.log('DELETE /runs/:id - Удалить пробежку');
     console.log('\nТестовые данные для входа:');
     console.log('Email: test@example.com');
     console.log('Пароль: password123');

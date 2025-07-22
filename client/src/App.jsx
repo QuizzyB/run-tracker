@@ -339,7 +339,7 @@ const RunTracker = () => {
     // Страница входа
     if (!isAuthenticated) {
         return (
-            <div className="min-h-screen bg-gray-100 flex items-center justify-center">
+            <div className="w-screen bg-gray-100 flex items-center justify-center">
                 <div className="bg-white p-8 rounded-lg shadow-md w-96">
                     <h1 className="text-2xl font-bold text-center mb-6 text-gray-800">
                         <Activity className="inline mr-2" />
