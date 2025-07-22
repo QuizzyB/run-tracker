@@ -426,7 +426,7 @@ const RunTracker = () => {
                 </div>
             </header>
 
-            <div className="w-full mx-auto px-4 py-6">
+            <div className="w-screen mx-auto px-4 py-6">
                 {error && (
                     <div className="mb-4 p-3 bg-red-100 border border-red-400 text-red-700 rounded">
                         {error}
