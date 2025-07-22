@@ -400,7 +400,7 @@ const RunTracker = () => {
 
     // Главная страница
     return (
-        <div className="min-h-screen bg-gray-100">
+        <div className="min-h-screen w-full bg-gray-100">
             {/* Заголовок */}
             <header className="bg-white shadow-sm">
                 <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
