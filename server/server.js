@@ -12,7 +12,10 @@ const PORT = process.env.PORT || 3001;
 const JWT_SECRET = 'your-secret-key-change-in-production';
 
 // Middleware
-app.use(cors());
+app.use(cors({
+    origin: 'https://run-tracker-front.onrender.com',
+    credentials: true,
+}));
 app.use(express.json());
 app.use('/uploads', express.static('uploads'));
 
