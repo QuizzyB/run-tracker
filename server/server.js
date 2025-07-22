@@ -64,7 +64,7 @@ let runs = [
         id: 1,
         userId: 1,
         date: '15.07.2024',
-        distance: 5.2,
+        distance: 5.3,
         time: 28,
         location: 'Шымкент',
         pace: '5.38',
