@@ -2,8 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { MapPin, Clock, Activity, TrendingUp, Eye } from 'lucide-react';
 
 const RunTracker = () => {
-    // API Base URL - измените на ваш сервер
-    const API_BASE_URL = 'http://localhost:3001/api';
+    const API_BASE_URL = 'https://run-tracker-wll5.onrender.com';
 
     // Состояние для аутентификации
     const [isAuthenticated, setIsAuthenticated] = useState(false);
