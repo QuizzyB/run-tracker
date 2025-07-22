@@ -66,7 +66,7 @@ let runs = [
         date: '15.07.2024',
         distance: 5.2,
         time: 28,
-        location: 'Центральный парк, Москва',
+        location: 'Шымкент',
         pace: '5.38',
         photo: null,
         createdAt: new Date('2024-07-15')
@@ -77,7 +77,7 @@ let runs = [
         date: '18.07.2024',
         distance: 3.5,
         time: 20,
-        location: 'Сокольники, Москва',
+        location: 'Астана',
         pace: '5.71',
         photo: null,
         createdAt: new Date('2024-07-18')
